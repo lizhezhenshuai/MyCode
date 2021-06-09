@@ -1,0 +1,43 @@
+const Mock=require("mockjs");
+Mock.mock("/api/liveStreaming/createList",()=>{
+    return Mock.mock({
+        "list|40":[
+            {
+                img:'@image(200x160,@color)',
+                'status|1':[true,false],
+                name:'@cname',
+                'flag|1':[true,false],
+                title:'@ctitle',
+                date:'@date',
+                //观看人数
+                'viewsNumber|20-300':1,
+                //关注人数
+                'attentionNumber|20-300':1,
+                //点赞人数
+                'likeNumber|20-300':1,
+                //当前下单人数
+                'orderNumber|10-40':1,
+                id:'@id',
+                //最高在线人数
+                "bestHighNumber|2000-8000":1,
+                //购买人数
+                'buyNumber|1000-6000':1,
+                //新增粉丝数
+                'addFans|6-2000':1,
+                'orderArr':{
+                    "list|10":[
+                        {
+                            img:'@image(150x150,@color)',
+                            'id|+1':1,
+                            'url':'@url',
+                            'price|3000-8000':1,
+                            'orderNumber|300-2000':1,
+                            title:'@ctitle',
+                            'handleNumber|3000-8000':1
+                        }
+                    ]
+                }
+            }
+        ]
+    })
+})
